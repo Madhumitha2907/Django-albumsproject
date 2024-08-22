@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Reservation</title>
+</head>
+<body>
+    <h2>Create Reservation</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="passenger_id">Passenger ID:</label>
+        <input type="text" id="passenger_id" name="passenger_id" required><br>
+        <label for="flight_id">Flight Number:</label>
+        <input type="text" id="flight_id" name="flight_id" required><br>
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" required><br>
+        <button type="submit">Reserve</button>
+    </form>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

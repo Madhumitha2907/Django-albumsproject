@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Album</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h1>Are you sure you want to delete "{{ album.title }}"?</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm</button>
+        </form>
+        <a href="{% url 'album_list' %}">Cancel</a>
+    {% else %}
+        <h1>Access Denied</h1>
+        <p>You need to be logged in to delete an album.</p>
+        <a href="{% url 'login' %}">Login</a> or <a href="{% url 'album_list' %}">Back to Album List</a>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Song</title>
+</head>
+<body>
+    <h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Song</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    
+    <a href="{% if form.instance.album %}{% url 'album_detail' form.instance.album.pk %}{% else %}#{% endif %}">Back to Album</a>
+
+</body>
+</html>

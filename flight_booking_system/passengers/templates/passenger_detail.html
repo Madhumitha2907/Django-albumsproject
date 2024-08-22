@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ passenger.passenger_name }}</title>
+</head>
+<body>
+    <h1>{{ passenger.passenger_name }}</h1>
+    <p>Email: {{ passenger.email }}</p>
+    <p>Contact Number: {{ passenger.contact_number }}</p>
+    <a href="{% url 'passenger_edit' pk=passenger.pk %}">Edit</a>
+    <a href="{% url 'passenger_list' %}">Back to List</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ album.title }}</title>
+</head>
+<body>
+    <h1>{{ album.title }}</h1>
+    <p>Release Date: {{ album.release_date }}</p>
+    <ul>
+        {% for song in songs %}
+        <li><a href="{% url 'song_detail' song.pk %}">{{ song.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'song_add' %}">Add Song</a>
+    <a href="{% url 'album_edit' album.pk %}">Edit Album</a>
+    <a href="{% url 'album_delete' album.pk %}">Delete Album</a>
+</body>
+</html>

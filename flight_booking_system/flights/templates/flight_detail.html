@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ flight.flight_number }}</title>
+</head>
+<body>
+    <h1>{{ flight.flight_number }}</h1>
+    <p>Departure City: {{ flight.departure_city }}</p>
+    <p>Arrival City: {{ flight.arrival_city }}</p>
+    <p>Departure Time: {{ flight.departure_time }}</p>
+    <p>Arrival Time: {{ flight.arrival_time }}</p>
+    <p>Seat Availability: {{ flight.seat_availability }}</p>
+    <a href="{% url 'flight_edit' pk=flight.pk %}">Edit</a>
+    <a href="{% url 'flight_list' %}">Back to List</a>
+</body>
+</html>

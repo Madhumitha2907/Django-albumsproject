@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment {{ payment.id }}</title>
+</head>
+<body>
+    <h1>Payment {{ payment.id }}</h1>
+    <p>Ticket: {{ payment.ticket.id }}</p>
+    <p>Payment Date: {{ payment.payment_date }}</p>
+    <p>Amount: {{ payment.amount }}</p>
+    <p>Payment Method: {{payment.ticket.ticket_price  }}</p>
+    <a href="{% url 'payment_edit' pk=payment.pk %}">Edit</a>
+    <a href="{% url 'payment_delete' pk=payment.pk %}">Delete</a>
+    <a href="{% url 'payment_list' %}">Back to List</a>
+</body>
+</html>

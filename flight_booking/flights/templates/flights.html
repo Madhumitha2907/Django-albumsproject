@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flights and Reservations</title>
+</head>
+<body>
+    <h1>Flights and Reservations</h1>
+    <table border="1">
+        <tr>
+            <th>Flight Number</th>
+            <th>Passenger Name</th>
+        </tr>
+        {% for flight in flights %}
+        <tr>
+            <td>{{ flight.flight_number }}</td>
+            <td>{{ flight.passenger_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

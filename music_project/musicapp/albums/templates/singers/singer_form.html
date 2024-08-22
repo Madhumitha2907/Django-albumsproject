@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Singer</title>
+</head>
+<body>
+    <h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Singer</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'singer_add' %}">Back to Singer List</a>
+    <a href="{% url 'singer_list' %}">Back to Singer List</a>
+</body>
+</html>

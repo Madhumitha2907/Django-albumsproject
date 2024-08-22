@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Passenger</title>
+</head>
+<body>
+    <h1>Edit Passenger</h1>
+    <form id="passengerForm" method="post">
+        {% csrf_token %}
+        
+        <label for="passenger_name">Passenger Name:</label>
+        <input type="text" id="passenger_name" name="passenger_name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="contact_number">Contact Number:</label>
+        <input type="text" id="contact_number" name="contact_number"><br><br>
+
+        <button type="submit" id="saveButton" disabled>Save</button>
+    </form>
+    <a href="{% url 'passenger_list' %}">Cancel</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('passengerForm');
+            const saveButton = document.getElementById('saveButton');
+
+            function validateEmail(email) {
+                // Regex to validate email
+                const emailPattern = /^[a-zA-Z][\w.-]*@(?:gmail\.com|yahoo\.com|outlook\.com)$/;
+                return emailPattern.test(email);
+            }
+
+            function checkFormValidity() {
+                const passengerName = document.getElementById('passenger_name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const contactNumber = document.getElementById('contact_number').value.trim();
+
+                // Check if all fields are filled and email is valid
+                const isValid = passengerName !== '' &&
+                                validateEmail(email) &&
+                                contactNumber !== '';
+
+                // Enable or disable the save button based on form validity
+                saveButton.disabled = !isValid;
+            }
+
+            // Attach the checkFormValidity function to the input event of the form
+            form.addEventListener('input', checkFormValidity);
+        });
+    </script>
+</body>
+</html>

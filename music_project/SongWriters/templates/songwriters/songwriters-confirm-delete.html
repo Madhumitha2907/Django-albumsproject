@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Song Writer</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete the song writer record?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+    </form>
+    <a href="{% url 'song_writer_list' %}">Cancel</a>
+</body>
+</html>

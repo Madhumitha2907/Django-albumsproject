@@ -1,0 +1,23 @@
+<!-- templates/Albums/album_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ album.Title }}</title>
+</head>
+<body>
+    <h1>{{ album.Title }}</h1>
+    <p>Release Date: {{ album.ReleaseDate }}</p>
+    <p>Genre: {{ album.Genre }}</p>
+    <h2>Songs</h2>
+    <ul>
+        {% for song in songs %}
+            <li>
+                <a href="{% url 'song_detail' song.SongID %}">{{ song.Title }}</a> - {{ song.Duration }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

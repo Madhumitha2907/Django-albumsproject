@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ album.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>{{ album.title }}</h1>
+    <p>Release Date: {{ album.release_date }}</p>
+    <ul>
+        {% for song in songs %}
+        <li><a href="{% url 'song_detail' song.pk %}">{{ song.title }} - {{ song.date_created }}</a></li>
+        {% endfor %}
+    </ul>
+    
+    <!-- Conditional display based on user authentication and permissions -->
+    {% if user.is_authenticated %}
+        <a href="{% url 'song_add' %}">Add Song</a>
+        <br>
+        {% if perms.album.edit_album %}
+            <a href="{% url 'album_edit' album.pk %}">Edit Album</a>
+        {% endif %}
+        <br>
+        {% if perms.album.delete_album %}
+            <a href="{% url 'album_delete' album.pk %}">Delete Album</a>
+        {% endif %}
+    {% else %}
+        <p>You need to <a href="{% url 'login' %}">log in</a> to manage this album.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ previous_page }}">Go back</a>
+</body>
+</html>

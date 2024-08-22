@@ -1,0 +1,22 @@
+<!-- myapp/templates/reservations.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservations</title>
+</head>
+<body>
+    <h1>Reservations</h1>
+    <table>
+        <tr>
+            <th>Passenger Name</th>
+            <th>Flight Number</th>
+        </tr>
+        {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation.passenger_name }}</td>
+            <td>{{ reservation.flight.flight_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

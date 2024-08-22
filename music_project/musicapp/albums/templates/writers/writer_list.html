@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Writers</title>
+</head>
+<body>
+    <h2>Writers</h2>
+    <ul>
+        {% for writer in writers %}
+            <li><a href="{% url 'writer_detail' writer.pk %}">{{ writer.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'writer_add' %}">Add New Writer</a>
+    
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!-- singers/templates/singers/singer_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ singer.name }}</title>
+</head>
+<body>
+    <h1>{{ singer.name }}</h1>
+    <p>{{ singer.bio }}</p>
+    <a href="{% url 'singer_update' pk=singer.pk %}">Edit</a>
+    <a href="{% url 'singer_delete' pk=singer.pk %}">Delete</a>
+    <a href="{% url 'singer_list' %}">Back to list</a>
+</body>
+</html>

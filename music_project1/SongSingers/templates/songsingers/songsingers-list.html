@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song Singer List</title>
+</head>
+<body>
+    <h1>Song Singer List</h1>
+    <a href="{% url 'song_singer_create' %}">Add New Song Singer</a>
+    <ul>
+        {% for singer in singers %}
+            <li>
+                {{ singer.Song.Title }} - {{ singer.Singer_Name }}
+                <a href="{% url 'song_singer_update' singer.pk %}">Edit</a>
+                <a href="{% url 'song_singer_delete' singer.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

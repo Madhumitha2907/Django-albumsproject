@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choreography ID List</title>
+</head>
+<body>
+    <h1>Choreography ID List</h1>
+    <a href="{% url 'choreography_id_create' %}">Add New Choreography ID</a>
+    <ul>
+        {% for choreo_id in ids %}
+            <li>
+                {{ choreo_id.ChoreographyName }}
+                <a href="{% url 'choreography_id_update' choreo_id.pk %}">Edit</a>
+                <a href="{% url 'choreography_id_delete' choreo_id.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

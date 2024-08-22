@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Album</title>
+</head>
+<body>
+    <h1>Music Album Database</h1>
+    <ul>
+        <li><a href="{% url 'albums:album_list' %}">Albums</a></li>
+        <li><a href="{% url 'songs:song_list' %}">Songs</a></li>
+        <li><a href="{% url 'singers:singer_list' %}">Singers</a></li>
+        <li><a href="{% url 'writers:writer_list' %}">Writers</a></li>
+        <li><a href="{% url 'songsingers:songsinger_list' %}">Song Singers</a></li>
+        <li><a href="{% url 'songwriters:songwriter_list' %}">Song Writers</a></li>
+    </ul>
+</body>
+</html>

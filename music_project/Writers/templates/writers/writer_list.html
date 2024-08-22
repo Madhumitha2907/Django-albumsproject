@@ -1,0 +1,22 @@
+<!-- writers/templates/writers/writer_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Writers List</title>
+</head>
+<body>
+    <h1>Writers List</h1>
+    <a href="{% url 'writer_create' %}">Add New Writer</a>
+    <ul>
+        {% for writer in writers %}
+            <li>
+                {{writer.Writer_Name}}
+                <a href="{% url 'writer_detail' pk=writer.pk %}">{{ writer.name }}</a>
+                <a href="{% url 'writer_update' pk=writer.pk %}">Edit</a>
+                <a href="{% url 'writer_delete' pk=writer.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

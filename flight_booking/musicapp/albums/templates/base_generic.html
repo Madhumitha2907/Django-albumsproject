@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Music Album Management{% endblock %}</title>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'musicapp/static/style.css' %}">
+    
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

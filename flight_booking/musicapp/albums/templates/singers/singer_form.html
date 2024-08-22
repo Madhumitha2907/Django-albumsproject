@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Singer</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Singer</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    
+    <a href="{% url 'singer_list' %}">Back to Singer List</a>
+    <br>
+    <a href="{{ previous_page }}">Go back</a>
+</body>
+</html>

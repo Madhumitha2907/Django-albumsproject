@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song List</title>
+</head>
+<body>
+    <h1>Song List</h1>
+    <a href="{% url 'song_create' %}">Add New Song</a>
+    <ul>
+        {% for song in songs %}
+            <li>
+                {{ song.Title }} - {{ song.Album.Title }}
+                <a href="{% url 'song_update' song.pk %}">Edit</a>
+                <a href="{% url 'song_delete' song.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

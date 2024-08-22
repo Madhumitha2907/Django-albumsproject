@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Flight Booking System</h1>
+    <ul>
+        <li><a href="{% url 'flight_list' %}">Flights</a></li>
+        <li><a href="{% url 'passenger_list' %}">Passengers</a></li>
+        <li><a href="{% url 'reservation_list' %}">Reservations</a></li>
+        <li><a href="{% url 'ticket_list' %}">Tickets</a></li>
+        <li><a href="{% url 'payment_list' %}">Payments</a></li>
+    </ul>
+</body>
+</html>

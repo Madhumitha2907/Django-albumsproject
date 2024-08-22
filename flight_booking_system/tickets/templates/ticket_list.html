@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket List</title>
+</head>
+<body>
+    <h1>Ticket List</h1>
+    <a href="{% url 'ticket_new' %}">Add New Ticket</a>
+    <ul>
+        {% for ticket in tickets %}
+        <li>
+            <a href="{% url 'ticket_detail' pk=ticket.pk %}">Ticket {{ ticket.id }} for {{ ticket.reservation.passenger.passenger_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

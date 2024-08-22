@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ song.title }}</title>
+</head>
+<body>
+    <h1>{{ song.title }}</h1>
+    <p>Duration: {{ song.duration }}</p>
+    <h2>Singers</h2>
+    <ul>
+        {% for singer in singers %}
+        <li>{{ singer.name }}
+            <a href="{% url 'singer_delete' singer.pk %}">Delete Singer</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <h2>Writers</h2>
+    <ul>
+        {% for writer in writers %}
+        <li>{{ writer.name }}
+            <a href="{% url 'writer_delete' writer.pk %}">Delete Writer</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'singer_add' %}">Add Singer</a>
+    <a href="{% url 'writer_add' %}">Add Writer</a>
+    <a href="{% url 'song_edit' song.pk %}">Edit Song</a>
+    <a href="{% url 'song_delete' song.pk %}">Delete Song</a>
+    <!-- In your song_detail.html template -->
+    
+</body>
+</html>

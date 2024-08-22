@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Passenger</title>
+</head>
+<body>
+    <h1>Edit Passenger</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'passenger_list' %}">Cancel</a>
+</body>
+</html>

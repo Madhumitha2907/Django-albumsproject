@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Album List</title>
+</head>
+<body>
+    <h1>Album List</h1>
+    <a href="{% url 'album_create' %}">Add New Album</a>
+    <ul>
+        {% for album in albums %}
+            <li>
+                {{ album.Title }} - {{ album.ReleaseDate }} - {{ album.Genre }}
+                
+                <a href="{% url 'album_update' album.pk %}">Edit</a>
+                <a href="{% url 'album_delete' album.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

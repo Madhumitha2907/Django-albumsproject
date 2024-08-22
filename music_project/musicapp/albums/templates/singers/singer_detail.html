@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ singer.name }}</title>
+</head>
+<body>
+    <h2>{{ singer.name }}</h2>
+    
+    <a href="{% url 'singer_edit' singer.pk %}">Edit Singer</a>
+    <form action="{% url 'singer_delete' singer.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete Singer">
+    </form>
+    <a href="{% url 'singer_list' %}">Back to Singer List</a>
+</body>
+</html>

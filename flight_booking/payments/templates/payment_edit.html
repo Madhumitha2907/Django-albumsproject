@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Payment</title>
+</head>
+<body>
+    <h1>Edit Payment</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'payment_list' %}">Cancel</a>
+</body>
+</html>

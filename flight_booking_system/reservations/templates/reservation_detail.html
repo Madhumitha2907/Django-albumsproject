@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation {{ reservation.id }}</title>
+</head>
+<body>
+    <h1>Reservation {{ reservation.id }}</h1>
+    <p>Flight: {{ reservation.flight.flight_number }}</p>
+    <p>Passenger: {{ reservation.passenger.passenger_name }}</p>
+    <p>Reservation Date: {{ reservation.reservation_date }}</p>
+    <a href="{% url 'reservation_edit' pk=reservation.pk %}">Edit</a>
+    <a href="{% url 'reservation_list' %}">Back to List</a>
+</body>
+</html>

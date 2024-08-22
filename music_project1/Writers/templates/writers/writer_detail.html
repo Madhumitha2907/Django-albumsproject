@@ -1,0 +1,15 @@
+<!-- writers/templates/writers/writer_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ writer.name }}</title>
+</head>
+<body>
+    <h1>{{ writer.name }}</h1>
+    <p>{{ writer.bio }}</p>
+    <a href="{% url 'writer_update' pk=writer.pk %}">Edit</a>
+    <a href="{% url 'writer_delete' pk=writer.pk %}">Delete</a>
+    <a href="{% url 'writer_list' %}">Back to list</a>
+</body>
+</html>

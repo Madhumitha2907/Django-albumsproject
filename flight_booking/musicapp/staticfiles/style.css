@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:burlywood;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1, h2 {
+    color:brown;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: brown;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="date"], input[type="time"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.album-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.album-item {
+    width: 200px;
+    text-align: center;
+}
+
+.album-image {
+    width: 300px;  
+    height: 300px; 
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}

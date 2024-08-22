@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passenger List</title>
+</head>
+<body>
+    <h1>Passenger List</h1>
+    <a href="{% url 'passenger_new' %}">Add New Passenger</a>
+    <ul>
+        {% for passenger in passengers %}
+        <li>
+            <a href="{% url 'passenger_detail' pk=passenger.pk %}">{{ passenger.passenger_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

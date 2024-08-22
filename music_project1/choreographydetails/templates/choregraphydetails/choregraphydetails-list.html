@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choreography Detail List</title>
+</head>
+<body>
+    <h1>Choreography Detail List</h1>
+    <a href="{% url 'choreography_detail_create' %}">Add New Choreography Detail</a>
+    <ul>
+        {% for detail in details %}
+            <li>
+                {{ detail.Song.Title }} - {{ detail.ChoreographyID.ChoreographyName }}
+                <a href="{% url 'choreography_detail_update' detail.pk %}">Edit</a>
+                <a href="{% url 'choreography_detail_delete' detail.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

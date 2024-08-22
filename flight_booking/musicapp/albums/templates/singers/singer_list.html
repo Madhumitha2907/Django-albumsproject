@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Singers List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>List of Singers</h1>
+    {% if singers %}
+        <ul>
+            {% for singer in singers %}
+                <li>
+                    {{ singer.name }}
+                    <a href="{% url 'get_songs_by_singer' singer.name %}">View Songs by </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Singers found.</p>
+    {% endif %}
+    <a href="{% url 'album_list' %}">Back to Albums</a>
+    <br>
+    <a href="{{previous_page}}">Go Back</a>
+    <br>
+</body>
+</html>

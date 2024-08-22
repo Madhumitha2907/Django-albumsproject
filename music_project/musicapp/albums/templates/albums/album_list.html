@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Albums</title>
+</head>
+<body>
+    <h1>Albums</h1>
+    <ul>
+        {% for album in albums %}
+        <li><a href="{% url 'album_detail' album.pk %}">{{ album.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'album_add' %}">Add Album</a>
+</body>
+</html>
